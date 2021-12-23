@@ -1,0 +1,15 @@
+{
+  "fullNameTextBoxField": "//label[@id='userName-label']",
+  "fullNameTextBox": "//input[@id='userName']",
+  "emailTextBoxField": "//label[@id='userEmail-label']",
+  "emailTextBox":"//input[@id='userEmail']",
+  "presentAddressTextBoxField": "//label[@id='currentAddress-label']",
+  "presentAddressTextBox": "//textarea[@id='currentAddress']",
+  "permanentAddressTextBoxField": "//label[@id='permanentAddress-label']",
+  "permanentAddressTextBox": "//textarea[@id='permanentAddress']",
+  "fullNameText": "Full Name",
+  "emailText": "Email",
+  "presentAddressText": "Current Address",
+  "permanentAddressText": "Permanent Address",
+  "submitButton": "//button[@id='submit']"
+}

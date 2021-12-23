@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- parallel = "tests" means runs test blocks parallely !-->
+<!-- parallel = "methods" means runs test @Test annotation methods parallely !-->
+<!-- parallel = "classes" means runs multiple classes in a test block parallely !-->
+<suite name="Rohi" parallel="classes">
+    <test name="WaitsFile">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.yash.Tests.Waits"/>
+        </classes>
+    </test>
+</suite>
+
+
