@@ -9,7 +9,8 @@ public class Start {
     public static String TEST_NG_SUIT_FILE_XML = null;
 
     public static void main(String[] args) {
-        TEST_NG_SUIT_FILE_XML = "/Users/yperli/IdeaProjects/SeleniumProjectGradle/testng.xml";
+        String user_dir = System.getProperty("user.dir");
+        TEST_NG_SUIT_FILE_XML = user_dir + "/testng.xml";
         List<String> suites = new ArrayList<String>();
         suites.add(TEST_NG_SUIT_FILE_XML);
         TestNG testng = new TestNG();
