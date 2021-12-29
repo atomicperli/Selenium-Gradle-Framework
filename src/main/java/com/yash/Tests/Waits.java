@@ -54,7 +54,7 @@ public class Waits extends InitialSuiteSetup {
 
         //Assert Title of The Page
         System.out.println(driver.getTitle());
-        Assert.assertEquals(driver.getTitle(), "ToolsQA");
+        Assert.assertEquals(driver.getTitle(), "ToolsQAA");
 
         //Assert fullName field text and Enter value
         String fullNameField = uiHelper.getText(driver, (String) JsonTestData.get("fullNameTextBoxField"), 60);
