@@ -37,9 +37,18 @@ public class Waits extends InitialSuiteSetup {
         try {
             System.out.println("Before Class");
             String testName = getClass().getSimpleName();
-            String fileName = System.getProperty("user.dir") + "/src/test/resources/" + testName + "/Waits.json";
-            String commonFileName = System.getProperty("user.dir") + "/src/test/resources/common_config.json";
-            JSONObject jsonFiles [] = {d.getJson(fileName), d.getJson(commonFileName)};
+            String filename = null;
+            String commonFileName = null;
+            if(DOCKER_RUN.equalsIgnoreCase("true")) {
+                filename = "/tmp/" + testName + "/Waits.json";
+                commonFileName = "/tmp/common_config.json";
+            } else {
+                String user_dir = System.getProperty("user.dir");
+                filename = user_dir + "/src/test/resources/" + testName + "/Waits.json";
+                commonFileName = user_dir + "/src/test/resources/common_config.json";
+
+            }
+            JSONObject[] jsonFiles = {d.getJson(filename), d.getJson(commonFileName)};
             JsonTestData = d.mergeJsonFiles(jsonFiles);
             driver.manage().window().maximize();
             driver.get("https://demoqa.com/text-box");
@@ -258,7 +267,7 @@ public class Waits extends InitialSuiteSetup {
         return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 
-    @AfterMethod
+    //@AfterMethod
     public void TakeScreenShot(ITestResult result) throws IOException {
         //Initialize Screenshot Class Object by casting the Driver to TakesScreenshot class
         if(result.getStatus() == ITestResult.FAILURE) {
